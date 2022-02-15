@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io;
 use std::io::BufRead;
 
-pub fn run() -> std::io::Result<()> {
+fn main() -> std::io::Result<()> {
 
     let lines = load("day_3.txt")?;
 

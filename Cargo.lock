@@ -3,11 +3,50 @@
 version = 3
 
 [[package]]
-name = "advent-of-code"
+name = "advent-of-code-2021-01-1"
 version = "0.1.0"
 dependencies = [
  "pretty_env_logger",
  "regex",
+]
+
+[[package]]
+name = "advent-of-code-2021-01-2"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
+ "regex",
+]
+
+[[package]]
+name = "advent-of-code-2021-02-2"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
+ "regex",
+]
+
+[[package]]
+name = "advent-of-code-2021-03-1"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
+ "regex",
+]
+
+[[package]]
+name = "advent-of-code-2021-03-2"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
+ "regex",
+]
+
+[[package]]
+name = "advent-of-code-2021-04-01"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
 ]
 
 [[package]]

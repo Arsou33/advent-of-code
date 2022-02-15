@@ -32,7 +32,7 @@ impl SubPosition {
     }
 }
 
-pub fn run() -> std::io::Result<()> {
+fn main() -> std::io::Result<()> {
 
     let file = File::open("day_2.txt")?;
     let lines = io::BufReader::new(file).lines();

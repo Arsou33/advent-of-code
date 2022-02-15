@@ -70,13 +70,13 @@ impl Card {
 
 
 
-pub fn run() -> std::io::Result<()> {
+pub fn main() {
 
-    let file = File::open("day_4.txt")?;
+    let file = File::open("files/day_4.txt").expect("Unable to read file");
     let reader = io::BufReader::new(file).lines();
 
     let mut iter = reader.into_iter();
-    let draw_line = iter.next().unwrap()?;
+    let draw_line = iter.next().unwrap().expect("Unable to read draws line");
     let draws = Vec::from_iter(draw_line.split(',').map(|d| d.parse::<u32>().unwrap()));
 
     // Reading the cards from the file
@@ -84,13 +84,13 @@ pub fn run() -> std::io::Result<()> {
     while let Some(line) = iter.next() {
 
         // At the beginning of a card, line is empty
-        let line = line?;
+        let line = line.expect("Unable to read line");
         if !line.is_empty() { panic!("Line should be empty {}", line)};
 
         // We read the five line of the card
         let mut lines = Vec::new();
         for _ in 0..5 {
-            let line = iter.next().unwrap()?;
+            let line = iter.next().unwrap().expect("Unable to read line");
             let line = Vec::from_iter(line.split_whitespace().map(|v| v.parse::<u32>().unwrap()));
             lines.push(line);
 
@@ -103,7 +103,7 @@ pub fn run() -> std::io::Result<()> {
     match play(&draws,&mut cards) {
         Some(x) => {
             println!("Result : {:?}", x);
-            return Ok(());
+            return;
 
         }
         _ => {}

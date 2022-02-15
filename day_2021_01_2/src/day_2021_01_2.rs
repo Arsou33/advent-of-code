@@ -2,12 +2,11 @@ use std::fs::File;
 use std::io;
 use std::io::BufRead;
 
-
-pub fn run() -> std::io::Result<()> {
+ fn main() -> std::io::Result<()> {
 
     let file = File::open("day_1.txt")?;
     let lines = io::BufReader::new(file).lines();
-    let mut counters = [0,0,0]; // 3 sliding windows counter
+    let mut counters = [0;3]; // 3 sliding windows counter
     let mut nb_increase = -3;
     let mut idx = 0;
     for line in lines {
@@ -20,18 +19,11 @@ pub fn run() -> std::io::Result<()> {
         }
 
         idx += 1;
-        let current_window_count = counters[(idx)%3];
+        let current_window_count = counters[idx%3];
         if current_window_count > previous_window_count {
             nb_increase += 1;
         }
-
-
     }
-
-
     println!("Result : {}", nb_increase);
-
     Ok(())
-
-
 }

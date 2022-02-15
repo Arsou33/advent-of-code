@@ -2,8 +2,7 @@ use std::fs::File;
 use std::io;
 use std::io::BufRead;
 
-
-pub fn run() -> std::io::Result<()> {
+ fn main() -> std::io::Result<()> {
 
     let file = File::open("day_1.txt")?;
     let lines = io::BufReader::new(file).lines();
