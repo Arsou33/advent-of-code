@@ -50,6 +50,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "advent-of-code-2021-04-02"
+version = "0.1.0"
+dependencies = [
+ "pretty_env_logger",
+]
+
+[[package]]
 name = "aho-corasick"
 version = "0.7.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"

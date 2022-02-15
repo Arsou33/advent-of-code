@@ -99,32 +99,22 @@ pub fn main() {
         cards.push(card);
     }
 
-
-    match play(&draws,&mut cards) {
-        Some(x) => {
-            println!("Result : {:?}", x);
-            return;
-
-        }
-        _ => {}
-    }
-
-
-    panic!("No one wins");
-
-
-}
-
-
-
-fn play(draws: &Vec<u32>, cards: &mut Vec<Card>) -> Option<u32> {
-    for draw in draws.iter() {
-        for card in cards.iter_mut() {
-            if let Some(result) = card.play(*draw) {
-               return Some(result * *draw);
+    let mut last_win = None;
+    for draw in draws {
+        cards = cards.into_iter().filter_map(|mut card| {
+            match card.play(draw) { // We play for every card
+                Some(win) => {
+                    last_win = Some((card, win, draw));
+                    None
+                }, //Filtering it if it wins
+                None => Some(card) // Keeping it unless
             }
-        }
+        }).collect();
+
+
     }
-    // No one wins
-    None
+
+    let win = last_win.expect("No last win");
+    println!("Result : {}", win.1 * win.2);
+
 }

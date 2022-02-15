@@ -4,7 +4,7 @@ use std::io::BufRead;
 
 fn main() -> std::io::Result<()> {
 
-    let lines = load("day_3.txt")?;
+    let lines = load("day_03.txt")?;
 
 
     let mut oxygen = lines.to_vec();

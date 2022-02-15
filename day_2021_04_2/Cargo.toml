@@ -1,11 +1,11 @@
 [package]
-name = "advent-of-code-2021-04-01"
+name = "advent-of-code-2021-04-02"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "day_2021_04_1"
-path = "src/day_2021_04_1.rs"
+name = "day_2021_04_2"
+path = "src/day_2021_04_2.rs"
 
 [dependencies]
 pretty_env_logger = "0.4"

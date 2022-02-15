@@ -4,7 +4,7 @@ use std::io::BufRead;
 
 fn main() -> std::io::Result<()> {
 
-    let file = File::open("day_3.txt")?;
+    let file = File::open("day_03.txt")?;
     let lines = io::BufReader::new(file).lines();
     let mut nb_line = 0;
     let mut counters = vec![0];
