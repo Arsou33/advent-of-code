@@ -1,11 +1,11 @@
 [package]
-name = "advent-of-code-2021-05-1"
+name = "advent-of-code-2021-05-2"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "day_2021_05_1"
-path = "src/day_2021_05_1.rs"
+name = "day_2021_05_2"
+path = "src/day_2021_05_2.rs"
 
 [dependencies]
 log = "0.4.14"
